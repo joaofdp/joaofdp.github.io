@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Faria Língua</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">Logo</a>
+    </div>
+    <nav class="nav">
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="dicionario-completo.html">Dicionário</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="contact-page">
+    <div class="contact-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">→</span>
+        <span class="current">Contato</span>
+      </nav>
+      
+      <!-- Header -->
+      <div class="contact-header">
+        <h1 class="contact-title">Entre em Contato</h1>
+        <p class="contact-subtitle">Tem alguma sugestão, reclamação ou quer só desabafar sobre jargão corporativo? Manda pra gente.</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="contact-form">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name" class="form-label">Nome</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input"
+            placeholder="Seu nome"
+            required
+          >
+          <span class="error-message" id="nameError"></span>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input"
+            placeholder="seu@email.com"
+            required
+          >
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <!-- Reason Dropdown -->
+        <div class="form-group">
+          <label for="reason" class="form-label">Motivo do Contato</label>
+          <select 
+            id="reason" 
+            name="reason" 
+            class="form-select"
+            required
+          >
+            <option value="" disabled selected>Selecione um motivo</option>
+            <option value="sugestao">Sugestão de Termo</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="elogio">Elogio (acreditamos que não)</option>
+            <option value="correcao">Correção de Termo</option>
+            <option value="parceria">Proposta de Parceria</option>
+            <option value="outro">Outro</option>
+          </select>
+          <span class="error-message" id="reasonError"></span>
+        </div>
+
+        <!-- Message Field -->
+        <div class="form-group">
+          <label for="message" class="form-label">Mensagem</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            class="form-textarea"
+            placeholder="Escreva sua mensagem aqui..."
+            rows="6"
+            required
+          ></textarea>
+          <span class="error-message" id="messageError"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">
+          Enviar Mensagem
+        </button>
+      </form>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="successMessage" class="success-message hidden">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">Mensagem Enviada!</h2>
+        <p class="success-text">Obrigado pelo contato. Vamos ler sua mensagem enquanto fingimos que estamos trabalhando.</p>
+        <button id="sendAnother" class="secondary-button">Enviar Outra Mensagem</button>
+      </div>
+    </div>
+  </main>
+
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-content">
+    <!-- Brand Column -->
+    <div class="footer-brand">
+      <div class="footer-logo">Faria Língua</div>
+      <p class="footer-tagline">
+        Glossário satírico de jargão corporativo. Traduzindo corporativês para português honesto desde que alguém precisou.
+      </p>
+    </div>
+
+    <!-- Navigation Column -->
+    <div class="footer-column">
+      <h3 class="footer-column-title">Navegação</h3>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="dicionario-completo.html">Dicionário</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <!-- Quick Links Column -->
+    <div class="footer-column">
+      <h3 class="footer-column-title">Termos Populares</h3>
+      <nav class="footer-links">
+        <a href="mvp.html">MVP</a>
+        <a href="pivot.html">Pivot</a>
+        <a href="brainstorm.html">Brainstorm</a>
+        <a href="stakeholder.html">Stakeholder</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-copyright">
+      © 2025 Faria Língua. Todos os direitos reservados (ou não, a gente não liga muito).
+    </div>
+    <div class="footer-credit">
+      Feito por <a href="contato.html">João & Guilherme</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const sendAnotherBtn = document.getElementById('sendAnother');
+
+    // Form validation and submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Clear previous errors
+      clearErrors();
+      
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const reason = document.getElementById('reason').value;
+      const message = document.getElementById('message').value.trim();
+      
+      let isValid = true;
+      
+      // Validate name
+      if (name === '') {
+        showError('nameError', 'Por favor, insira seu nome');
+        isValid = false;
+      }
+      
+      // Validate email
+      if (email === '') {
+        showError('emailError', 'Por favor, insira seu e-mail');
+        isValid = false;
+      } else if (!isValidEmail(email)) {
+        showError('emailError', 'Por favor, insira um e-mail válido');
+        isValid = false;
+      }
+      
+      // Validate reason
+      if (reason === '') {
+        showError('reasonError', 'Por favor, selecione um motivo');
+        isValid = false;
+      }
+      
+      // Validate message
+      if (message === '') {
+        showError('messageError', 'Por favor, escreva uma mensagem');
+        isValid = false;
+      } else if (message.length < 10) {
+        showError('messageError', 'A mensagem deve ter pelo menos 10 caracteres');
+        isValid = false;
+      }
+      
+      // If all valid, "send" the form
+      if (isValid) {
+        sendForm();
+      }
+    });
+
+    // Validate email format
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // Show error message
+    function showError(elementId, message) {
+      const errorElement = document.getElementById(elementId);
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+      
+      // Add error class to input
+      const inputId = elementId.replace('Error', '');
+      const inputElement = document.getElementById(inputId);
+      inputElement.classList.add('error');
+    }
+
+    // Clear all errors
+    function clearErrors() {
+      const errorMessages = document.querySelectorAll('.error-message');
+      errorMessages.forEach(error => {
+        error.textContent = '';
+        error.style.display = 'none';
+      });
+      
+      const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+      inputs.forEach(input => {
+        input.classList.remove('error');
+      });
+    }
+
+    // Simulate sending form
+    function sendForm() {
+      // Add loading state to button
+      const submitBtn = form.querySelector('.submit-button');
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call delay
+      setTimeout(() => {
+        // Hide form and show success message
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+        
+        // Reset button
+        submitBtn.textContent = 'Enviar Mensagem';
+        submitBtn.disabled = false;
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1500);
+    }
+
+    // Send another message button
+    sendAnotherBtn.addEventListener('click', function() {
+      // Hide success message and show form
+      successMessage.classList.add('hidden');
+      form.style.display = 'block';
+      
+      // Reset form
+      form.reset();
+      clearErrors();
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Real-time validation (remove error when user starts typing)
+    const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+    inputs.forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+          this.classList.remove('error');
+          const errorId = this.id + 'Error';
+          const errorElement = document.getElementById(errorId);
+          if (errorElement) {
+            errorElement.style.display = 'none';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
